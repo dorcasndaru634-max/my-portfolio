@@ -16,10 +16,8 @@ export default function Home() {
       {/* 3. HERO CONTENT */}
       <div className="max-w-4xl mx-auto text-center relative z-10">
         
-        {/* Availability Badge */}
-        <span className="inline-block bg-sky-500/20 text-sky-200 text-xs font-semibold px-4 py-1.5 rounded-full tracking-wide uppercase border border-sky-400/30 shadow-sm animate-pulse">
-          Available for Opportunities
-        </span>
+        
+       
 {/* Tech Stack Ribbon */}
         <div className="border-t border-white/10 pt-8">
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">
