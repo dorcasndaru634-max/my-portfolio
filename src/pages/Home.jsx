@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <section 
       className="min-h-[80vh] flex items-center justify-center px-6 py-16 md:py-24 bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+      style={{ backgroundImage: "https://res.cloudinary.com/souig2bs/image/upload/v1783952681/WhatsApp_Image_2026-07-13_at_3.34.27_PM_pmcd8p.jpg" }
     >
       {/* Background Overlay: This ensures your text remains highly visible over any image */}
       <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]"></div>
@@ -48,15 +48,7 @@ export default function Home() {
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-300 mb-4">
             Core Tech Stack
           </p>
-          <div className="flex flex-wrap gap-3 justify-center text-sm font-medium text-slate-100">
-            <span className="bg-white/10 border border-white/10 px-3 py-1.5 rounded-md shadow-sm backdrop-blur-sm">React</span>
-            <span className="bg-white/10 border border-white/10 px-3 py-1.5 rounded-md shadow-sm backdrop-blur-sm">Tailwind CSS</span>
-            <span className="bg-white/10 border border-white/10 px-3 py-1.5 rounded-md shadow-sm backdrop-blur-sm">Node.js</span>
-            <span className="bg-white/10 border border-white/10 px-3 py-1.5 rounded-md shadow-sm backdrop-blur-sm">JavaScript</span>
-            <span className="bg-white/10 border border-white/10 px-3 py-1.5 rounded-md shadow-sm backdrop-blur-sm">SQL</span>
-            <span className="bg-white/10 border border-white/10 px-3 py-1.5 rounded-md shadow-sm backdrop-blur-sm">Git & GitHub</span>
-          </div>
-        </div>
+           </div>
 
       </div>
     </section>
