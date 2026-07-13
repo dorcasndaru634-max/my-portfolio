@@ -20,29 +20,7 @@ export default function Home() {
         <span className="inline-block bg-sky-500/20 text-sky-200 text-xs font-semibold px-4 py-1.5 rounded-full tracking-wide uppercase border border-sky-400/30 shadow-sm animate-pulse">
           Available for Opportunities
         </span>
-
-       {/* Professional Subtitle / Bio */}
-        <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
-          Hi, I'm <strong className="text-white font-semibold">Dorcas Ndaru</strong>. As a Business IT student.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <a 
-            href="#projects" 
-            className="w-full sm:w-auto bg-sky-500 hover:bg-sky-600 text-white font-medium px-8 py-3.5 rounded-lg shadow-md transition duration-200 text-center transform hover:-translate-y-0.5"
-          >
-            View My Work
-          </a>
-          <a 
-            href="#contact" 
-            className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm font-medium px-8 py-3.5 rounded-lg shadow-sm transition duration-200 text-center transform hover:-translate-y-0.5"
-          >
-            Get in Touch
-          </a>
-        </div>
-
-        {/* Tech Stack Ribbon */}
+{/* Tech Stack Ribbon */}
         <div className="border-t border-white/10 pt-8">
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">
             Core Tech Stack

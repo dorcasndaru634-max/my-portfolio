@@ -1,4 +1,9 @@
 function About() {
+  import React from 'react';
+
+
+// 1. Paste your Cloudinary URL for the new cartoon image here:
+  const aboutImageUrl = "https://res.cloudinary.com/souig2bs/image/upload/v1783956590/WhatsApp_Image_2026-07-13_at_6.28.21_PM_tzdjos.jpg";
   return (
     <div className="max-w-3xl mx-auto">
       <h2 className="text-3xl font-bold mb-6 text-sky-400">About Me</h2>
