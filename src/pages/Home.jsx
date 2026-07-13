@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default function Home() {
-  // 1. PASTE YOUR ACTUAL CLOUDINARY URL INSTEAD OF THE TEMPLATE LINK BELOW:
-  const backgroundImageUrl = "https://res.cloudinary.com/souig2bs/image/upload/v1783952681/WhatsApp_Image_2026-07-13_at_3.34.27_PM_pmcd8p.jpg";
+  // 1. PASTE YOUR ACTUAL CLOUDINARY URL INSTEAD OF THE TEMPLATE LINK BELOW:";
+  const backgroundImageUrl = "https://res.cloudinary.com/souig2bs/image/upload/v1783955294/WhatsApp_Image_2026-07-13_at_6.03.57_PM_1_o3gzug.jpg"
 
   return (
     <section 
@@ -21,14 +21,9 @@ export default function Home() {
           Available for Opportunities
         </span>
 
-        {/* Main Headline */}
-        <h1 className="text-4xl md:text-6xl font-extrabold text-white mt-6 mb-6 tracking-tight leading-tight drop-shadow-md">
-          Bridging the Gap Between <span className="text-sky-400">Business Strategy</span> & Full-Stack Code
-        </h1>
-
-        {/* Professional Subtitle / Bio */}
+       {/* Professional Subtitle / Bio */}
         <p className="text-lg md:text-xl text-slate-200 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
-          Hi, I'm <strong className="text-white font-semibold">Dorcas Ndaru</strong>. As a Business IT student, I build responsive frontend interfaces and robust backend systems engineered to solve real-world operational problems.
+          Hi, I'm <strong className="text-white font-semibold">Dorcas Ndaru</strong>. As a Business IT student.
         </p>
 
         {/* Action Buttons */}
