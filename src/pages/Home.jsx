@@ -1,4 +1,46 @@
-import React from 'react';
+import React from 'react';import { useEffect } from 'react';
+
+const GoogleTranslate = () => {
+  useEffect(() => {
+    // 1. Define the global initializer function Google's script looks for
+    window.googleTranslateElementInit = () => {
+      if (window.google && window.google.translate) {
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            includedLanguages: 'en,sw', // Only English and Swahili
+            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false,
+          },
+          'google_translate_element'
+        );
+      }
+    };
+
+    // 2. Prevent duplicate script injection if the component re-renders
+    const scriptId = 'google-translate-script';
+    if (!document.getElementById(scriptId)) {
+      const addScript = document.createElement('script');
+      addScript.setAttribute('id', scriptId);
+      addScript.setAttribute('type', 'text/javascript');
+      addScript.setAttribute(
+        'src',
+        'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+      );
+      document.body.appendChild(addScript);
+    }
+  }, []);
+
+  return (
+    /* 3. Styled wrapper container using Tailwind CSS */
+    <div className="inline-block p-1 bg-white border border-gray-200 rounded-md shadow-sm hover:border-gray-300 transition-colors">
+      <div id="google_translate_element" className="notranslate text-sm"></div>
+    </div>
+  );
+};
+
+export default GoogleTranslate;
+
 
 export default function Home() {
   // 1. PASTE YOUR ACTUAL CLOUDINARY URL INSTEAD OF THE TEMPLATE LINK BELOW:";
