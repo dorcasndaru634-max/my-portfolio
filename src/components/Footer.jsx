@@ -1,5 +1,6 @@
 import React from "react";
-import { Download } from "lucide-react"; // Only import non-brand icons
+import { Link } from "react-router-dom";
+import { FileText } from "lucide-react";
 
 const logoUrl = "https://via.placeholder.com/40"; 
 
@@ -78,16 +79,13 @@ function Footer() {
             GitHub
           </a>
 
-          import { Link } from "react-router-dom";
-import { FileText } from "lucide-react";
-
-<Link
-  to="/resume"
-  className="flex items-center gap-1.5 hover:text-teal-600 transition text-gray-600"
->
-  <FileText size={16} />
-  Resume
-</Link>
+          <Link
+            to="/cv"
+            className="flex items-center gap-1.5 hover:text-teal-600 transition text-gray-600"
+          >
+            <FileText size={16} />
+            Resume
+          </Link>
 
         </div>
 

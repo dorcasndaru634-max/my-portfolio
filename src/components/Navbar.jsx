@@ -29,6 +29,12 @@ export default function Navbar() {
         {/* Navigation Links */}
         <div className="flex items-center gap-6">
           <Link
+            to="/"
+            className="text-gray-700 hover:text-teal-600 font-semibold transition-colors"
+          >
+            Home
+          </Link>
+          <Link
             to="/about"
             className="text-gray-700 hover:text-teal-600 font-semibold transition-colors"
           >

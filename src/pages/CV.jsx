@@ -53,7 +53,7 @@ export default function CV() {
             </h3>
             <div className="border-l-4 border-teal-500 pl-4 mb-4">
               <h4 className="font-bold text-gray-900">Diploma in Business Information Technology</h4>
-              <p className="text-gray-600">Your Institution Name</p>
+              <p className="text-gray-600">mount kenya university</p>
               <p className="text-teal-600 text-sm">2023 - Present</p>
             </div>
           </div>
@@ -65,8 +65,8 @@ export default function CV() {
               Experience
             </h3>
             <div className="border-l-4 border-teal-500 pl-4 mb-4">
-              <h4 className="font-bold text-gray-900">Web Developer Intern</h4>
-              <p className="text-gray-600">Company Name</p>
+              <h4 className="font-bold text-gray-900">ICT department</h4>
+              <p className="text-gray-600">Thika level 5 hosppital,Kiambu</p>
               <p className="text-teal-600 text-sm">2024 - Present</p>
               <p className="text-gray-600 mt-2">Developing responsive web applications using React and modern technologies.</p>
             </div>
@@ -84,7 +84,7 @@ export default function CV() {
               <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Python</span>
               <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Django</span>
               <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Tailwind CSS</span>
-              <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Data Analysis</span>
+              <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">managerial skills</span>
               <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Networking</span>
               <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Database Management</span>
             </div>
