@@ -1,16 +1,36 @@
-function Projects() {
+import React from "react";
+
+const Projects = () => {
   return (
-    <div>
-      <h2 className="text-3xl font-bold mb-8 text-sky-400">My Projects</h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        {/* Placeholder Card */}
-        <div className="p-6 bg-slate-900 border border-slate-800 rounded-xl hover:border-sky-500/50 transition-colors">
-          <h3 className="text-xl font-bold mb-2 text-white">superior fruits management system</h3>
-          <p className="text-slate-400 mb-4">its my school project;a fruit management system.</p>
-          <span className="text-xs font-semibold px-2.5 py-1 bg-slate-800 rounded-full text-sky-400">React</span>
+    <section className="py-16 px-6">
+      <h2 className="text-4xl font-bold text-center mb-10">
+        My Projects
+      </h2>
+
+      <div className="grid md:grid-cols-3 gap-6">
+        <div className="bg-white shadow-lg rounded-lg p-6">
+          <h3 className="text-xl font-bold mb-2">Fruit Management System</h3>
+          <p className="text-gray-600">
+            A web application for managing fruit sales and inventory.
+          </p>
+        </div>
+
+        <div className="bg-white shadow-lg rounded-lg p-6">
+          <h3 className="text-xl font-bold mb-2">Portfolio Website</h3>
+          <p className="text-gray-600">
+            A personal portfolio built using React and Tailwind CSS.
+          </p>
+        </div>
+
+        <div className="bg-white shadow-lg rounded-lg p-6">
+          <h3 className="text-xl font-bold mb-2">Hospital System</h3>
+          <p className="text-gray-600">
+            A simple system for managing patient records and appointments.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
 export default Projects;

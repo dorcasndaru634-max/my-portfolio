@@ -1,10 +1,9 @@
 import React from "react";
 import { ArrowRight, GraduationCap, BarChart3 } from "lucide-react";
-import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function Hero() {
   const profileImage =
-    "https://res.cloudinary.com/souig2bs/image/upload/v1784549995/ChatGPT_Image_Jul_20_2026_02_51_08_PM_k4pnoa.png";
+    "https://res.cloudinary.com/souig2bs/image/upload/v1783955294/WhatsApp_Image_2026-07-13_at_6.03.57_PM_1_o3gzug.jpg";
 
   return (
     <section className="bg-gray-50 min-h-screen flex items-center">
@@ -43,12 +42,9 @@ export default function Home() {
                 <ArrowRight size={20} />
               </button>
 
-              <Link
-                to="/cv"
-                className="border border-gray-300 px-8 py-4 rounded-lg hover:bg-gray-100 transition"
-              >
+              <button className="border border-gray-300 px-8 py-4 rounded-lg hover:bg-gray-100 transition">
                 Download CV
-              </Link>
+              </button>
             </div>
 
           </div>
