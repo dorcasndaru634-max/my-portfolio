@@ -12,11 +12,11 @@ export default function CV() {
         </div>
 
         {/* CV Document */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="bg-purple rounded-2xl shadow-xl p-8">
           
           {/* Personal Information */}
           <div className="border-b-2 border-gray-200 pb-6 mb-6">
-            <h2 className="text-4xl font-bold text-gray-900">Dorcas Ndaru</h2>
+            <h2 className="text-4xl font-bold text-purple-900">Dorcas Ndaru</h2>
             <p className="text-xl text-teal-600 mt-2">Business Information Technology Student</p>
             <div className="flex flex-wrap gap-4 mt-4 text-gray-600">
               <div className="flex items-center gap-2">
@@ -54,8 +54,7 @@ export default function CV() {
             <div className="border-l-4 border-teal-500 pl-4 mb-4">
               <h4 className="font-bold text-gray-900">Diploma in Business Information Technology</h4>
               <p className="text-gray-600">mount kenya university</p>
-              <p className="text-teal-600 text-sm">2023 - Present</p>
-            </div>
+              </div>
           </div>
 
           {/* Experience */}
@@ -67,7 +66,7 @@ export default function CV() {
             <div className="border-l-4 border-teal-500 pl-4 mb-4">
               <h4 className="font-bold text-gray-900">ICT department</h4>
               <p className="text-gray-600">Thika level 5 hosppital,Kiambu</p>
-              <p className="text-teal-600 text-sm">2024 - Present</p>
+              <p className="text-teal-600 text-sm">May-august 2025</p>
               <p className="text-gray-600 mt-2">Developing responsive web applications using React and modern technologies.</p>
             </div>
           </div>

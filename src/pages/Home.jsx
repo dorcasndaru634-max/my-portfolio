@@ -35,21 +35,22 @@ export default function Home() {
               strategic IT implementation and data-driven business analytics.
               Transforming complex problems into streamlined digital solutions.
             </p>
+{/* Buttons */}
+<div className="flex gap-5 mt-10 flex-wrap">
 
-            {/* Buttons */}
-            <div className="flex gap-5 mt-10 flex-wrap">
-              <button className="bg-black text-white px-8 py-4 rounded-lg flex items-center gap-3 hover:bg-gray-800 transition">
-                View My Work
-                <ArrowRight size={20} />
-              </button>
+  <button className="bg-black text-white px-8 py-4 rounded-lg flex items-center gap-3 hover:bg-gray-800 transition">
+    View My Work
+    <ArrowRight size={20} />
+  </button>
 
-              <Link
-                to="/cv"
-                className="border border-gray-300 px-8 py-4 rounded-lg hover:bg-gray-100 transition"
-              >
-                Download CV
-              </Link>
-            </div>
+  <Link
+    to="/cv"
+    className="bg-black text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition"
+  >
+    CV
+  </Link>
+
+</div>
 
           </div>
 
