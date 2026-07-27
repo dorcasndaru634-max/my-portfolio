@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { GraduationCap, Laptop, Code2, Briefcase } from "lucide-react";
 
 export default function About() {
+  const [aboutData, setAboutData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/api/about/")
+      .then((response) => response.json())
+      .then((data) => {
+        setAboutData(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching about data:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div className="text-center py-20">Loading...</div>;
+  }
+
+  if (!aboutData) {
+    return <div className="text-center py-20">No data available</div>;
+  }
+
   return (
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6">
@@ -11,7 +35,7 @@ export default function About() {
           {/* LEFT IMAGE */}
           <div>
             <img
-              src="https://res.cloudinary.com/souig2bs/image/upload/v1784189420/copy_of_whatsapp_image_2026-07-13_at_62821_pm_tzdjos.jpg"
+              src={aboutData.image_url || "https://res.cloudinary.com/souig2bs/image/upload/v1784189420/copy_of_whatsapp_image_2026-07-13_at_62821_pm_tzdjos.jpg"}
               alt="Dorcas Ndaru"
               className="rounded-3xl shadow-xl w-full h-[600px] object-cover"
             />
@@ -25,23 +49,15 @@ export default function About() {
             </span>
 
             <h2 className="text-5xl font-bold mt-6 text-gray-900">
-              Passionate About
-              <span className="text-teal-700"> Business & Technology</span>
+              {aboutData.title}
             </h2>
 
             <p className="text-gray-600 text-lg leading-8 mt-6">
-              Hello! I'm <strong>Dorcas Ndaru</strong>, a Business Information
-              Technology student passionate about creating digital solutions
-              that improve businesses and everyday life. I enjoy designing
-              responsive websites, building web applications, and learning
-              emerging technologies.
+              Hello! I'm <strong>{aboutData.name}</strong>, {aboutData.description1}
             </p>
 
             <p className="text-gray-600 text-lg leading-8 mt-6">
-              My goal is to bridge the gap between business needs and technology
-              by developing secure, user-friendly, and efficient systems. I'm
-              continuously improving my skills in software development,
-              networking, cloud computing, and database management.
+              {aboutData.description2}
             </p>
 
             {/* FEATURES */}
@@ -59,7 +75,7 @@ export default function About() {
                   </h3>
 
                   <p className="text-gray-600">
-                    Diploma in Business Information Technology.
+                    {aboutData.education}
                   </p>
                 </div>
               </div>
@@ -75,7 +91,7 @@ export default function About() {
                   </h3>
 
                   <p className="text-gray-600">
-                    React, Django, JavaScript, Python and Tailwind CSS.
+                    {aboutData.web_dev}
                   </p>
                 </div>
               </div>
@@ -91,7 +107,7 @@ export default function About() {
                   </h3>
 
                   <p className="text-gray-600">
-                    Networking, databases, system analysis and software support.
+                    {aboutData.it_skills}
                   </p>
                 </div>
               </div>
@@ -107,7 +123,7 @@ export default function About() {
                   </h3>
 
                   <p className="text-gray-600">
-                    Becoming a full-stack software engineer and IT consultant.
+                    {aboutData.career_goal}
                   </p>
                 </div>
               </div>

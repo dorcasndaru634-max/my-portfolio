@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { GraduationCap, Briefcase, Award, Mail, Phone, MapPin } from "lucide-react";
 
 export default function CV() {
+  const [cvData, setCvData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/api/cv/")
+      .then((response) => response.json())
+      .then((data) => {
+        setCvData(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching CV data:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div className="text-center py-20">Loading...</div>;
+  }
+
+  if (!cvData) {
+    return <div className="text-center py-20">No CV data available</div>;
+  }
+
   return (
     <section className="bg-gray-50 min-h-screen py-20">
       <div className="max-w-4xl mx-auto px-6">
@@ -12,24 +36,24 @@ export default function CV() {
         </div>
 
         {/* CV Document */}
-        <div className="bg-purple rounded-2xl shadow-xl p-8">
+        <div className="bg-white rounded-2xl shadow-xl p-8">
           
           {/* Personal Information */}
           <div className="border-b-2 border-gray-200 pb-6 mb-6">
-            <h2 className="text-4xl font-bold text-purple-900">Dorcas Ndaru</h2>
-            <p className="text-xl text-teal-600 mt-2">Business Information Technology Student</p>
+            <h2 className="text-4xl font-bold text-gray-900">{cvData.name}</h2>
+            <p className="text-xl text-teal-600 mt-2">{cvData.title}</p>
             <div className="flex flex-wrap gap-4 mt-4 text-gray-600">
               <div className="flex items-center gap-2">
                 <Mail size={18} />
-                <span>dorcasndaru634@gmail.com</span>
+                <span>{cvData.email}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={18} />
-                <span>+254 797721600</span>
+                <span>{cvData.phone}</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin size={18} />
-                <span>Kenya</span>
+                <span>{cvData.location}</span>
               </div>
             </div>
           </div>
@@ -41,7 +65,7 @@ export default function CV() {
               Professional Summary
             </h3>
             <p className="text-gray-600 leading-relaxed">
-              Passionate Business Information Technology student with expertise in web development, data analysis, and IT solutions. Skilled in creating responsive websites and bridging business needs with technology.
+              {cvData.summary}
             </p>
           </div>
 
@@ -51,10 +75,13 @@ export default function CV() {
               <GraduationCap size={24} className="text-teal-600" />
               Education
             </h3>
-            <div className="border-l-4 border-teal-500 pl-4 mb-4">
-              <h4 className="font-bold text-gray-900">Diploma in Business Information Technology</h4>
-              <p className="text-gray-600">mount kenya university</p>
+            {cvData.educations && cvData.educations.map((edu, index) => (
+              <div key={index} className="border-l-4 border-teal-500 pl-4 mb-4">
+                <h4 className="font-bold text-gray-900">{edu.degree}</h4>
+                <p className="text-gray-600">{edu.school}</p>
+                <p className="text-teal-600 text-sm">{edu.year}</p>
               </div>
+            ))}
           </div>
 
           {/* Experience */}
@@ -63,12 +90,14 @@ export default function CV() {
               <Briefcase size={24} className="text-teal-600" />
               Experience
             </h3>
-            <div className="border-l-4 border-teal-500 pl-4 mb-4">
-              <h4 className="font-bold text-gray-900">ICT department</h4>
-              <p className="text-gray-600">Thika level 5 hosppital,Kiambu</p>
-              <p className="text-teal-600 text-sm">May-august 2025</p>
-              <p className="text-gray-600 mt-2">Developing responsive web applications using React and modern technologies.</p>
-            </div>
+            {cvData.experiences && cvData.experiences.map((exp, index) => (
+              <div key={index} className="border-l-4 border-teal-500 pl-4 mb-4">
+                <h4 className="font-bold text-gray-900">{exp.role}</h4>
+                <p className="text-gray-600">{exp.company}</p>
+                <p className="text-teal-600 text-sm">{exp.period}</p>
+                <p className="text-gray-600 mt-2">{exp.description}</p>
+              </div>
+            ))}
           </div>
 
           {/* Skills */}
@@ -78,14 +107,14 @@ export default function CV() {
               Skills
             </h3>
             <div className="flex flex-wrap gap-3">
-              <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">React</span>
-              <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">JavaScript</span>
-              <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Python</span>
-              <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Django</span>
-              <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Tailwind CSS</span>
-              <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">managerial skills</span>
-              <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Networking</span>
-              <span className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold">Database Management</span>
+              {cvData.skills && cvData.skills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-semibold"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
 
